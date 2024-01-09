@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: goldenrod;
+    font-family: 'Play', sans-serif;
+    font-size: 1.2rem;
+    text-align:center;
+}
+
+.container {
+    min-height: 100vh;
+    width: 400px;
+    margin: 0 auto;
+    background-color: lightskyblue;
+    box-shadow: 0 0 5px black;
+    border: none;
+}
+
+button {
+    font-family: 'Play', sans-serif;
+    display: block;
+    background-color: #000;
+    color: whitesmoke;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #b7b7b790;
+    outline: none;
+    cursor: pointer;
+}
+
+button:nth-of-type(4) {
+    background-color: #fff;
+    color: black;
+}
+
+.results {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: goldenrod;
+    width: 60%;
+    
+}

@@ -4,146 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+  <script src="rps.js" defer></script>
 </head>
 <body>
+<div class="container">
+  <button class="rock">rock</button>
+  <button class="paper">paper</button>
+  <button class="scissors">scissors</button>
+  <button class="reset">Start Over</button>
+  <div class="results"></div>
+</div>
+  
   
 </body>
 
-<script>
-  let WIN = "You Win!!";
-  let LOSE = "You Lose!!";
-  let DRAW = "Draw!!";
-
-  let WINS = 0;
-  let LOSES = 0;
-  let DRAWS = 0;
-
-   function getComputerChoice () {
-    let computerChoice = Math.floor(Math.random() * 3) + 1;
-    if (computerChoice === 1) {
-      computerChoice = "rock";
-    }else if (computerChoice === 2) {
-      computerChoice = "paper";
-    }else if (computerChoice === 3) {
-      computerChoice = "scissors"
-    }
-    return computerChoice;
-  }
-
-   function playRound (playerSelection, computerSelection) {
-    if (computerSelection === playerSelection) {
-      DRAW = "Draw!!";
-      DRAWS++
-      return DRAW
-    }
-
-    if (computerSelection === "rock" && playerSelection === "paper") {
-      WIN = "You Win!!";
-      WINS++
-      return WIN
-    }else if (computerSelection === "paper" && playerSelection === "rock") {
-      LOSE = "You Lose!!";
-      LOSES++
-      return LOSE
-    }
-
-    if (computerSelection === "scissors" && playerSelection === "rock") {
-      WIN = "You Win!!";
-      WINS++
-      return WIN
-    }else if (computerSelection === "rock" && playerSelection === "scissors") {
-      LOSE = "You Lose!!";
-      LOSES++
-      return LOSE
-    }
-
-    if (computerSelection === "paper" && playerSelection === "scissors") {
-      WIN = "You Win!!";
-      WINS++
-      return WIN
-    }else if (computerSelection === "scissors" && playerSelection === "paper") {
-      LOSE = "You Lose!!";
-      LOSES++
-      return LOSE
-    }
-  };
-
-  
-
-  
-  
-
-  function game() {
-    for(let i = 0; i < 5; i++) {
-    
-    playerSelection = prompt("Enter Selection: ");
-    playerSelection = playerSelection.toLowerCase();
-    if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-      alert("Error!! Please enter a valid input");
-    }
-    computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    console.log(playerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-
-/*     if (WIN) {
-      WINS++
-    }else if (LOSE) {
-      LOSES++
-    }else if (DRAW) {
-      DRAWS++
-    } */
-
-    }
-      
-    if (WINS > LOSES) {
-      console.log("Hurray!!! You Win");
-    }else if (WINS < LOSES) {
-      console.log("Sorry, you lost");
-    }else if (WINS === LOSES) {
-      console.log("Its a Tie!!!!")
-    }
-  
-  }
-
-  game();
-  /* function game() {
-
-    for(let numberOfRounds = 0; numberOfRounds < 5; numberOfRounds++) {
-     return playRound;
-    }
-      
-  }
-
-  game();
- */
-  /* function gamePlay(playerSelection, computerChoice) {
-    let playerSelection = prompt("Enter Selection: ");
-    playerSelection = playerSelection.toLowerCase();
-    computerChoice = getComputerChoice();
-    if (computerChoice === playerSelection) {
-      return "Draw"
-    }
-
-    if (computerChoice === "rock" && playerSelection === "paper") {
-      return "You Win!!"
-    }else if (computerChoice === "paper" && playerSelection === "rock") {
-      return "You Lose!!"
-    }
-
-    if (computerChoice === "scissors" && playerSelection === "rock") {
-      return "You Win!!"
-    }else if (computerChoice === "rock" && playerSelection === "scissors") {
-      return "You Lose!!"
-    }
-
-    if (computerChoice === "paper" && playerSelection === "scissors") {
-      return "You Win!!"
-    }else if (computerChoice === "scissors" && playerSelection === "paper") {
-      return "You Lose!!"
-    }
-
-    console.log(gamePlay(playerSelection, computerChoice))
-  } */
-</script>
 </html>
